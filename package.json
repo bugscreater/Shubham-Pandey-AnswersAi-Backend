@@ -4,7 +4,13 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
-    "docker:build": "docker-compose up --build"
+    "docker:build": "docker-compose up --build",
+    "test": "jest"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./testSetup.js"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -19,5 +25,10 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.5.2",
     "nodemon": "^3.1.7"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "mongodb-memory-server": "^10.1.2",
+    "supertest": "^7.0.0"
   }
 }
